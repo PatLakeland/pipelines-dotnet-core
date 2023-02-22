@@ -12,6 +12,14 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+  
+- task: VSBuild@1
+  inputs:
+    solution: '**\*.sln'
+    vsVersion: '16.0'
+    platform: 'x64'
+    configuration: 'release'
+
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
